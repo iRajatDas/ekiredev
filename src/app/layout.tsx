@@ -30,7 +30,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} antialiased font-sans`}>
         <SidebarProvider
-          open={defaultOpen}
+          open={defaultOpen ?? true}
           style={{
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-expect-error
