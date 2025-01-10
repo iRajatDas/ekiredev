@@ -19,6 +19,7 @@ import {
   DollarSign,
   LifeBuoy,
   HelpCircle,
+  ServerIcon,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -28,6 +29,7 @@ const menu = [
     items: [
       { name: "Dashboard", link: "/dashboard", icon: LayoutDashboard },
       { name: "Projects", link: "/projects", icon: Folder },
+      { name: "Create Server", link: "/servers/create", icon: ServerIcon },
     ],
   },
   {
