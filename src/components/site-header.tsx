@@ -4,7 +4,8 @@ import { UserNav } from "@/components/user-nav";
 import { useSidebar } from "./ui/sidebar";
 
 const SiteHeader = () => {
-  const { toggleSidebar } = useSidebar();
+  const { toggleSidebar, open, state } = useSidebar();
+  console.log("toggleSidebar", open, state);
   return (
     <header className="sticky top-0 bg-white shadow border-b">
       <div className="h-16 flex items-center justify-between px-4 sm:px-6 md:px-8">
@@ -12,8 +13,13 @@ const SiteHeader = () => {
         <div className="flex items-center">
           <button
             className="text-2xl"
+            data-testid="toggle-sidebar"
             onClick={() => {
-              toggleSidebar();
+              try {
+                toggleSidebar();
+              } catch (error) {
+                console.error(error);
+              }
             }}
           >
             <svg
