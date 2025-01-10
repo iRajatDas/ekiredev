@@ -4,6 +4,7 @@ import "./globals.css";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import { cookies } from "next/headers";
+import SiteHeader from "@/components/site-header";
 
 const geistSans = Inter({
   variable: "--font-geist-sans",
@@ -37,7 +38,8 @@ export default async function RootLayout({
           }}
         >
           <AppSidebar />
-          <main className="w-full">
+          <main className="w-full flex flex-col flex-auto min-h-dvh min-w-0 relative">
+            <SiteHeader />
             {/* <SidebarTrigger /> */}
             {children}
           </main>

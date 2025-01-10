@@ -1,12 +1,8 @@
-import SiteHeader from "@/components/site-header";
 import React from "react";
 
 const DashboardPage = () => {
   return (
-    <div className="flex flex-col flex-auto min-h-screen min-w-0 relative w-full">
-      {/* Header */}
-      <SiteHeader />
-
+    <div>
       {/* Main Content */}
       <main className="flex-grow bg-gray-50 px-4 sm:px-6 md:px-8 py-6">
         {/* Top Stats */}
