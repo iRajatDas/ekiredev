@@ -51,7 +51,7 @@ const CreateServerUI = () => {
         </div>
         {/* list */}
         <div className="flex gap-4 items-center flex-wrap p-6">
-          <div className="flex items-center gap-4 border rounded-lg px-4 py-5 w-[100px] md:w-[260px]">
+          <div className="flex items-center gap-4 border rounded-lg px-4 py-5 --w-[100px] md:w-[260px]">
             <img
               src="https://flagsapi.com/US/flat/32.png"
               alt="New York"
@@ -101,7 +101,7 @@ const CreateServerUI = () => {
               {OS.map((os, idx) => (
                 <div
                   key={idx}
-                  className="w-[100px] md:w-[200px] border rounded-md ring-1 ring-transparent hover:ring-blue-600 hover:border-blue-600 p-4 flex flex-col items-center cursor-pointer transition"
+                  className="max-md:px-8 md:w-[200px] border rounded-md ring-1 ring-transparent hover:ring-blue-600 hover:border-blue-600 p-4 flex flex-col items-center cursor-pointer transition"
                 >
                   <img
                     src={
@@ -122,7 +122,7 @@ const CreateServerUI = () => {
               {APPS.map((app, idx) => (
                 <div
                   key={idx}
-                  className="w-[100px] md:w-[200px] border rounded-md ring-1 ring-transparent hover:ring-blue-600 hover:border-blue-600 p-4 flex flex-col items-center cursor-pointer transition"
+                  className="max-md:px-8 md:w-[200px] border rounded-md ring-1 ring-transparent hover:ring-blue-600 hover:border-blue-600 p-4 flex flex-col items-center cursor-pointer transition"
                 >
                   <img
                     src={`https://ekiredev.netlify.app/${app.src}`}
@@ -168,11 +168,11 @@ const CreateServerUI = () => {
             </div>
 
             {/* Dedicated CPU */}
-            <div className="w-max">
+            <div className="w-max overflow-x-auto">
               <p className="w-full py-1 text-center border border-b-0 border-color rounded-t-md bg-gray-100 dark:bg-gray-700">
                 Dedicated CPU
               </p>
-              <div className="flex border border-color w-max rounded-b-md">
+              <div className="flex border border-color w-max rounded-b-md overflow-x-auto snap-mandatory">
                 {[
                   "General Purpose",
                   "CPU-Optimized",
@@ -181,7 +181,7 @@ const CreateServerUI = () => {
                 ].map((type, idx) => (
                   <div
                     key={idx}
-                    className={`flex ring-1 justify-center py-5 px-4 cursor-pointer select-none text-center border-r border-color w-52 rounded ${
+                    className={`flex ring-1 justify-center py-5 px-4 cursor-pointer select-none text-center border-r border-color w-52 rounded snap-start ${
                       activeCpuType === type
                         ? "ring-blue-600 border-blue-600"
                         : "ring-transparent hover:ring-blue-600 hover:border-blue-600"
@@ -250,7 +250,7 @@ const CreateServerUI = () => {
                   <h6 className="text-base font-medium opacity-50">
                     Need more disk space? Add a volume with no manual setup.
                   </h6>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-gray-500 mt-2">
                     Block storage volumes add extra disk space. We automatically
                     format and mount your volume so it’s available as soon as
                     your Droplet is, and you can move volumes seamlessly between
@@ -317,7 +317,7 @@ const AuthenticationMethod = () => {
 
       {/* Authentication Options */}
       <div className="p-6 space-y-4">
-        <div className="flex gap-4">
+        <div className="flex gap-4 max-md:flex-col">
           {/* SSH Key Option */}
           <label
             className={`flex items-start gap-4 border rounded-md p-4 cursor-pointer ${
@@ -375,7 +375,7 @@ const AuthenticationMethod = () => {
             <h6 className="text-base font-semibold">Select SSH Key</h6>
             <div className="relative">
               <select
-                className="w-1/3 min-w-0 px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="w-full md:w-1/3 min-w-0 px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                 // disabled={sshKeys.length === 0}
               >
                 {sshKeys.length > 0 ? (
